@@ -18,4 +18,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 app.include_router(tasks.router)
+
+@app.get("/")
+def root():
+    return {"status": "ok"}
